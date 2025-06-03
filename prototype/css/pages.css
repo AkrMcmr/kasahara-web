@@ -1,0 +1,701 @@
+/* ==========================================================================
+   ページ共通スタイル
+   ========================================================================== */
+
+.page-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 5rem 0;
+  text-align: center;
+  margin-bottom: 8rem;
+}
+
+.page-title {
+  font-size: 3.2rem;
+  margin: 0;
+}
+
+.cta-section {
+  background-color: var(--light-bg-color);
+  padding: 6rem 0;
+  text-align: center;
+  margin-top: 8rem;
+}
+
+.cta-title {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+}
+
+.cta-text {
+  max-width: 70rem;
+  margin: 0 auto 3rem;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* ==========================================================================
+   プロフィールページ
+   ========================================================================== */
+
+.profile-main {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  gap: 4rem;
+  margin-bottom: 9rem;
+  align-items: center;
+}
+
+.profile-image img {
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-name {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.profile-name-en {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  margin-left: 1.5rem;
+  font-weight: 400;
+}
+
+.profile-description {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.profile-timeline {
+  margin-bottom: 9rem;
+}
+
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 7rem;
+  height: 100%;
+  width: 2px;
+  background-color: var(--primary-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-date {
+  width: 14rem;
+  text-align: right;
+  padding-right: 3rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.timeline-date::after {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  right: -0.8rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  z-index: 1;
+}
+
+.timeline-content {
+  flex: 1;
+  padding-left: 3rem;
+}
+
+.timeline-content h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.profile-philosophy {
+  margin-bottom: 9rem;
+}
+
+.philosophy-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  gap: 3rem;
+}
+
+.philosophy-item h4 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.profile-ensemble {
+  margin-bottom: 9rem;
+}
+
+.ensemble-content {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  gap: 4rem;
+  align-items: center;
+}
+
+.ensemble-image img {
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ensemble-text p {
+  margin-bottom: 1.5rem;
+}
+
+.ensemble-links {
+  margin-top: 2rem;
+}
+
+/* ==========================================================================
+   レッスンページ
+   ========================================================================== */
+
+.lessons-overview {
+  margin-bottom: 9rem;
+}
+
+.overview-content {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 4rem;
+  align-items: center;
+}
+
+.overview-image img {
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.overview-text h3 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.overview-text p {
+  margin-bottom: 1.5rem;
+}
+
+.lessons-features {
+  padding: 8rem 0;
+  background-color: var(--light-bg-color);
+  margin-bottom: 9rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  gap: 3rem;
+}
+
+.feature-card {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform var(--transition-speed);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.feature-card h4 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.lessons-plans {
+  margin-bottom: 9rem;
+}
+
+.plans-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  gap: 3rem;
+}
+
+.plan-card {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed);
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+}
+
+.plan-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.plan-title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.plan-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.plan-price span {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.plan-content {
+  padding: 2.5rem;
+  background-color: var(--background-color);
+}
+
+.plan-details {
+  margin-bottom: 2rem;
+}
+
+.plan-details li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.plan-details i {
+  color: var(--primary-color);
+  margin-right: 1rem;
+  margin-top: 0.3rem;
+}
+
+.plan-content p {
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.plan-content .btn {
+  width: 100%;
+}
+
+.lessons-format {
+  background-color: var(--light-bg-color);
+  padding: 8rem 0;
+  margin-bottom: 9rem;
+}
+
+.format-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.format-item {
+  display: flex;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  padding: 3rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.format-icon {
+  flex-shrink: 0;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 2.5rem;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+
+.format-details h4 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.format-details p {
+  margin-bottom: 1rem;
+}
+
+.lessons-flow {
+  margin-bottom: 9rem;
+}
+
+.flow-list {
+  counter-reset: flow-counter;
+}
+
+.flow-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.flow-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 5rem;
+  left: 2.5rem;
+  width: 2px;
+  height: calc(100% - 2rem);
+  background-color: var(--border-color);
+}
+
+.flow-number {
+  flex-shrink: 0;
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.flow-content {
+  flex: 1;
+  padding-top: 0.5rem;
+}
+
+.flow-content h4 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.lessons-faq {
+  background-color: var(--light-bg-color);
+  padding: 8rem 0;
+}
+
+/* ==========================================================================
+   お問い合わせページ
+   ========================================================================== */
+
+.contact-content {
+  margin-bottom: 9rem;
+}
+
+.contact-intro {
+  text-align: center;
+  max-width: 70rem;
+  margin: 0 auto 4rem;
+}
+
+.contact-flex {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 4rem;
+}
+
+.contact-section-title {
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.contact-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 5rem;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+.contact-form {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  padding: 3rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+
+.required {
+  color: #ff4d4d;
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-family: var(--base-font);
+  font-size: 1.6rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox-text {
+  margin-left: 1rem;
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.info-icon {
+  flex-shrink: 0;
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin-right: 1.5rem;
+}
+
+.info-content h4 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-content p {
+  margin-bottom: 1rem;
+}
+
+.line-btn {
+  display: inline-flex;
+  align-items: center;
+}
+
+.line-btn i {
+  margin-right: 0.5rem;
+}
+
+.social-contact {
+  margin-top: 3rem;
+}
+
+.social-contact h4 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-contact .social-list {
+  justify-content: flex-start;
+}
+
+.faq-section {
+  background-color: var(--light-bg-color);
+  padding: 8rem 0;
+}
+
+.faq-list {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+  position: relative;
+  padding: 2rem;
+  margin: 0;
+  cursor: pointer;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.faq-question i {
+  color: var(--primary-color);
+  margin-right: 1rem;
+  font-size: 2rem;
+}
+
+.faq-answer {
+  padding: 0 2rem 2rem;
+}
+
+/* ==========================================================================
+   レスポンシブ対応
+   ========================================================================== */
+
+@media (max-width: 1023px) {
+  .profile-main,
+  .ensemble-content,
+  .overview-content,
+  .contact-flex {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .profile-timeline .timeline::before {
+    left: 3rem;
+  }
+
+  .profile-timeline .timeline-date {
+    width: 6rem;
+    padding-right: 1.5rem;
+  }
+
+  .profile-timeline .timeline-date::after {
+    right: -0.3rem;
+  }
+
+  .profile-timeline .timeline-content {
+    padding-left: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-header {
+    padding: 4rem 0;
+    margin-bottom: 6rem;
+  }
+
+  .page-title {
+    font-size: 2.8rem;
+  }
+
+  .philosophy-content,
+  .features-grid,
+  .plans-list {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 25rem;
+  }
+
+  .format-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .format-icon {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .flow-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .flow-item:not(:last-child)::after {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5rem;
+    height: 3rem;
+  }
+
+  .flow-number {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-icon {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .social-contact .social-list {
+    justify-content: center;
+  }
+}
