@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault(); // デフォルトのフォーム送信を防ぐ
+    const ContactType = {
+      LESSON: 'レッスン',
+      REQUEST: '演奏依頼',
+      CONCERT: 'コンサート',
+      OTHER: 'その他',
+    };
 
     // フォームデータの取得
     const formData = new FormData(form);
@@ -13,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
       name: formData.get('name'),
       email: formData.get('email'),
       phone: formData.get('phone'),
-      subject: formData.get('contactType'),
-      details: formData.get('details'),
+      subject: ContactType[formData.get('contactType').toUpperCase()],
+      details: formData.get('message'),
     };
 
     // 基本的なバリデーション
