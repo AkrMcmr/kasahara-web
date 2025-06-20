@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
       name: formData.get('name'),
       email: formData.get('email'),
       phone: formData.get('phone'),
-      subject: formData.get('subject'),
+      subject: formData.get('contactType'),
       details: formData.get('details'),
     };
 
