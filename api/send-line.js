@@ -5,9 +5,6 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  console.log('Request body:', req.body);
-  console.log('User ID needed for:', userId);
-
   // OPTIONSリクエスト（プリフライト）への対応
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
