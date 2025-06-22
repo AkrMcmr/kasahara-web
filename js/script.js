@@ -1,5 +1,37 @@
-// DOM読み込み完了後に実行
-document.addEventListener('DOMContentLoaded', function () {
+// 共通パーツの読み込み
+async function loadCommonParts() {
+  try {
+    // ヘッダーの読み込み
+    const headerResponse = await fetch('includes/header.html');
+    if (headerResponse.ok) {
+      const headerHTML = await headerResponse.text();
+      const headerContainer = document.getElementById('header-container');
+      if (headerContainer) {
+        headerContainer.innerHTML = headerHTML;
+      }
+    }
+
+    // フッターの読み込み
+    const footerResponse = await fetch('includes/footer.html');
+    if (footerResponse.ok) {
+      const footerHTML = await footerResponse.text();
+      const footerContainer = document.getElementById('footer-container');
+      if (footerContainer) {
+        footerContainer.innerHTML = footerHTML;
+      }
+    }
+
+    // 共通パーツ読み込み後にイベントリスナーを設定
+    initializePageInteractions();
+  } catch (error) {
+    console.error('共通パーツの読み込みに失敗しました:', error);
+    // フォールバック: 直接HTMLが記述されている場合はそのまま処理続行
+    initializePageInteractions();
+  }
+}
+
+// ページのインタラクション初期化
+function initializePageInteractions() {
   // モバイルメニューの動作
   const menuToggle = document.querySelector('.menu-toggle');
   const navList = document.querySelector('.nav-list');
@@ -88,4 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
-});
+}
+
+// DOM読み込み完了後に共通パーツを読み込み
+document.addEventListener('DOMContentLoaded', loadCommonParts);
