@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault(); // デフォルトのフォーム送信を防ぐ
+
+    if (!confirm('入力内容を送信してよろしいですか？？')) {
+      return;
+    }
+
     const ContactType = {
       LESSON: 'レッスン',
       REQUEST: '演奏依頼',
