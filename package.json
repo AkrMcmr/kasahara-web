@@ -1,7 +1,7 @@
 {
   "name": "kasahara-yugo-website",
   "version": "1.0.0",
-  "description": "笠原悠郷 - クラシックサックス奏者公式ウェブサイト",
+  "description": "笠原悠郷 - クラシックサクソフォン奏者公式ウェブサイト",
   "main": "index.html",
   "scripts": {
     "dev": "node server.js",

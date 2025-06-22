@@ -250,8 +250,10 @@
 
 .plans-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  max-width: 90rem;
+  margin: 0 auto;
 }
 
 .plan-card {
@@ -645,6 +647,11 @@
     padding: 0 2rem;
   }
 
+  .plans-list {
+    gap: 3rem;
+    max-width: 80rem;
+  }
+
   /* タイムライン タブレット対応 */
   .profile-timeline .timeline::before {
     left: 2.5rem;
@@ -688,9 +695,14 @@
   }
 
   .philosophy-content,
-  .features-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
   .plans-list {
     grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 50rem;
   }
 
   .cta-buttons {
