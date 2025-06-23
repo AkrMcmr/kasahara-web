@@ -18,7 +18,7 @@ export default async function handler(req, res) {
   try {
     // 環境変数の確認
     const channelAccessToken = process.env.LINE_CHANNEL_ACCESS_TOKEN;
-    const userId = process.env.LINE_USER_ID;
+    const userIds = process.env.LINE_USER_IDS.split(',');
 
     if (!channelAccessToken || !userId) {
       console.error('Missing environment variables');
@@ -46,37 +46,39 @@ export default async function handler(req, res) {
     `.trim();
 
     // LINE Messaging APIへのリクエスト
-    const lineResponse = await fetch(
-      'https://api.line.me/v2/bot/message/push',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${channelAccessToken}`,
-        },
-        body: JSON.stringify({
-          to: userId,
-          messages: [
-            {
-              type: 'text',
-              text: message,
-            },
-          ],
-        }),
+    for (const userId of userIds) {
+      const lineResponse = await fetch(
+        'https://api.line.me/v2/bot/message/push',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${channelAccessToken}`,
+          },
+          body: JSON.stringify({
+            to: userId,
+            messages: [
+              {
+                type: 'text',
+                text: message,
+              },
+            ],
+          }),
+        }
+      );
+
+      if (!lineResponse.ok) {
+        const errorData = await lineResponse.text();
+        console.error('LINE API Error:', errorData);
+        return res.status(500).json({ error: 'Failed to send LINE message' });
       }
-    );
 
-    if (!lineResponse.ok) {
-      const errorData = await lineResponse.text();
-      console.error('LINE API Error:', errorData);
-      return res.status(500).json({ error: 'Failed to send LINE message' });
+      // 成功レスポンス
+      return res.status(200).json({
+        success: true,
+        message: 'Form submitted and LINE notification sent successfully',
+      });
     }
-
-    // 成功レスポンス
-    return res.status(200).json({
-      success: true,
-      message: 'Form submitted and LINE notification sent successfully',
-    });
   } catch (error) {
     console.error('Server error:', error);
     return res.status(500).json({ error: 'Internal server error' });
