@@ -16,6 +16,7 @@
   ],
   "author": "笠原悠郷",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "@vercel/analytics": "^1.5.0"
+  }
 }
